@@ -47,7 +47,7 @@ https://edllt.github.io/PageRedirector/?link=obsidian://adv-uri?vault=YOURVAULT&
 
 ### Auto-Close Feature
 1. Install [TamperMonkey](https://www.tampermonkey.net/) in your browser
-2. Add the `AutoPageClose.js` script to TamperMonkey
+2. Install the [AutoPageClose.js](https://github.com/EDLLT/PageRedirector/releases/download/v1.0/AutoPageClose.user.js) script to TamperMonkey
 
 
 ## Technical Details
