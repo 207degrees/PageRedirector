@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obsidian Redirector</title>
+    <meta http-equiv="refresh" content="1;url=" id="metaRefresh">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
     <script>
-        // Function to get the query parameter from the URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+        try {
+            const link = new URLSearchParams(location.search).get('link');
 
-        // Redirect to the specified Obsidian link if it exists
-        window.onload = function() {
-            const obsidianLink = getQueryParam('link');
-            if (obsidianLink) {
-                // Redirect to the Obsidian link
-                window.location.href = obsidianLink;
+            if (link) {
+                document.getElementById('metaRefresh').content = `1;url=${link}`;
+                new URL(link); // Will throw if invalid
+                location.replace(link);
             } else {
-                document.body.innerHTML = '<h1>No link provided.</h1>';
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.body.innerHTML = '<h1>No link provided.</h1>';
+                });
             }
-        };
+        } catch (e) {
+            document.addEventListener('DOMContentLoaded', () => {
+                document.body.innerHTML = '<h1>Invalid URL provided.</h1>';
+            });
+        }
     </script>
 </head>
 <body>
-    <h1>Redirecting...</h1>
+    <noscript>
+        <h1>JavaScript is required for redirection</h1>
+    </noscript>
 </body>
 </html>
