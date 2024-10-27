@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Redirector</title>
+    <script>
+        // Function to get the query parameter from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Redirect to the specified Obsidian link if it exists
+        window.onload = function() {
+            const obsidianLink = getQueryParam('link');
+            if (obsidianLink) {
+                // Redirect to the Obsidian link
+                window.location.href = obsidianLink;
+            } else {
+                document.body.innerHTML = '<h1>No link provided.</h1>';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
