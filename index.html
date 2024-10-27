@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <script>
-        try {
-            const link = new URLSearchParams(location.search).get('link');
-            if (link) {
-                new URL(link);
-                location.replace(link);
+            try {
+                const link = decodeURIComponent(location.search.substring(6)); // Remove '?link='
+                if (link) {
+                    new URL(link);
+                    location.replace(link);
+                }
+            } catch (e) {
+              document.body.innerHTML = '<h1>Invalid URL provided. Please check the link and try again.</h1>';
             }
-        } catch (e) {}
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
