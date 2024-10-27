@@ -7,6 +7,9 @@ Originally designed for Obsidian protocol links but works with any valid URL.
 The purpose of this script is to integrate it into sites which by default don't process the ``obsidian://`` protocol as a web-url.
 I personally use it to link to my Obsidian Vaults within Google Tasks.
 
+![image](https://github.com/user-attachments/assets/157b4315-e51b-450d-a8bf-021d3df02a97)
+
+
 
 ## Features
 
