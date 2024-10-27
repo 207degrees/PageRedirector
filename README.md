@@ -4,7 +4,7 @@ A minimal and lightning-fast URL redirector with auto-close functionality.
 Originally designed for Obsidian protocol links but works with any valid URL.
 
 
-The purpose of this script is to integrate it into sites which by default don't process the obsidian:// protocol as a web-url.
+The purpose of this script is to integrate it into sites which by default don't process the ``obsidian://`` protocol as a web-url.
 I personally use it to link to my Obsidian Vaults within Google Tasks.
 
 ## Features
