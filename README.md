@@ -1,11 +1,11 @@
 # Page Redirector
 
-A minimal and lightning-fast URL redirector with auto-close functionality.
-Originally designed for Obsidian protocol links but works with any valid URL.
+A minimal and lightning-fast URL redirector with auto-close functionality.  
+Originally designed for Obsidian protocol links but works with any valid URL.  
 
 
-The purpose of this script is to integrate it into sites which by default don't process the ``obsidian://`` protocol as a web-url.
-I personally use it to link to my Obsidian Vaults within Google Tasks.
+The purpose of this is to integrate it into sites which by default don't process the ``obsidian://`` protocol as a web-url.  
+I personally use it to link to my Obsidian Vaults within Google Tasks.  
 
 ![image](https://github.com/user-attachments/assets/157b4315-e51b-450d-a8bf-021d3df02a97)
 
@@ -42,7 +42,7 @@ https://edllt.github.io/PageRedirector/?link=obsidian://open?vault=YOURVAULT&fil
 ```
 
 
-### Opening a file in Obsidian using the Advanced URI Plugin
+### (Optional) Opening a file in Obsidian using the Advanced URI Plugin
 I recommended using Obsidian Advanced URI instead because you can customize the behavior to:
 - Open specific headings
 - Navigate to custom positions in Obsidian canvas
@@ -56,7 +56,7 @@ https://edllt.github.io/PageRedirector/?link=obsidian://adv-uri?vault=YOURVAULT&
 ```
 
 
-### Auto-Close Feature
+### (Optional) Auto-Close Feature
 1. Install [TamperMonkey](https://www.tampermonkey.net/) in your browser
 2. Install the [AutoPageClose.js](https://github.com/EDLLT/PageRedirector/releases/download/v1.0/AutoPageClose.user.js) script to TamperMonkey
 
