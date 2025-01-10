@@ -1,40 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+            try {
+                const link = decodeURIComponent(location.search.substring(6)); // Remove '?link='
+                if (link) {
+                    new URL(link);
+                    location.replace(link);
+                }
+            } catch (e) {
+              document.body.innerHTML = '<h1>Invalid URL provided. Please check the link and try again.</h1>';
+            }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obsidian Redirector</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-    <script>
-        try {
-            const link = decodeURIComponent(location.search.substring(6)); // Remove '?link='
-            if (link) {
-                new URL(link); // Validate the URL
-
-                document.addEventListener('DOMContentLoaded', () => {
-                    document.body.innerHTML = `
-                        <h1>You are being redirected...</h1>
-                        <p>If the redirection does not work, <a href="${link}" target="_blank">click here</a>.</p>
-                    `;
-                    
-                    // Redirect immediately
-                    location.replace(link);
-
-                    // Close the page after 5 seconds
-                    setTimeout(() => window.close(), 5000);
-                });
-            } else {
-                throw new Error('Invalid URL');
-            }
-        } catch (e) {
-            document.addEventListener('DOMContentLoaded', () => {
-                document.body.innerHTML = `
-                    <h1>Invalid URL provided.</h1>
-                    <p>Please check the link and try again.</p>
-                `;
-            });
-        }
-    </script>
 </head>
 <body>
     <noscript>
