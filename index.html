@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Adjusted CSP -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' https://cloud.umami.is; 
+        connect-src 'self' https://cloud.umami.is; 
+        style-src 'self';
+    ">
     <script>
             try {
                 const link = decodeURIComponent(location.search.substring(6)); // Remove '?link='
@@ -12,10 +19,10 @@
               document.body.innerHTML = '<h1>Invalid URL provided. Please check the link and try again.</h1>';
             }
     </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="f99cd427-3d69-43a8-a387-b3b1465b382a"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obsidian Redirector</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <title>Page Redirector</title>
 </head>
 <body>
     <noscript>
